@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 import os
 load_dotenv()
-GOOGLE_API_KEY = "AIzaSyC0JlIIt3ZoHMW9Um861jShKia1xowo79M"
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GOOGLE_API_KEY)
+
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Simple text invocation
 result = llm.invoke("Sing a ballad of LangChain.")
